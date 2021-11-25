@@ -470,7 +470,7 @@ void FrankaHWSim::updateRobotState(ros::Time time) {
   std::array<double, 7> g;
   static bool state_initialized = false;
   if (state_initialized) {
-    g = this->model_->gravity(this->robot_state_);
+    g = this->model_->gravity(this->robot_state_, this->gravity_earth_);
   } else {
     for (auto& x : g) {
       x = 0;
